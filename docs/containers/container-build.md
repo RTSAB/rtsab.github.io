@@ -4,8 +4,19 @@ title:  "Bygg en container från en app"
 parent: "Containers"
 nav_order: 2
 ---
+# Paketera en applikation i en container
+{: .no_toc }
 
-## Paketera en applikation i en container
+<details open markdown="block">
+  <summary>
+    Innehåll
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+## Inledning
 
 För att visa hur det går till att paketera en applikation i en container kommer vi att utgå från Dockers egna introduktionsexempel. Det är en enkel To Do-app som är skriven i node.js. 
 
@@ -23,7 +34,7 @@ Applikationen har en hel del beroenden för att kunna köra. Det enklaste är at
 
 Skapa därefter en tom file i /etc/todos/todo.db så ska applikationen starta.
 
-### Dockerfile
+## Dockerfile
 
 Men vi vill ju enkelt kunna distribuera och köra applikationen även i andra system. Därför ska vi nu paketera den i en container. Det första vi gör är att skapa en fil som heter `Dockerfile` i samma mapp som package.json med följande innehåll:
 
@@ -51,7 +62,7 @@ Sen kör vi yarn som är en annan package manager lik npm. Den läser alla depen
 
 Slutligen så startar vi applikationen med node och pekar på index.js i /app/src biblioteket. 
 
-### Docker build
+## Docker build
 
 Nu är det dags att bygga själva containern och det gör man med `docker build -t to-do .`. "to-do" är namnet vi ger containern och -t är flaggan som låter oss sätta namnet. Vi avslutar med "." för att visa att vi ska bygga i nuvarande bibliotek.
 
@@ -90,3 +101,10 @@ Use 'docker scan' to run Snyk tests against images to find vulnerabilities and l
 
 Nu har vi byggt vår container och kan starta den med `$ docker run -d -p 3000:3000 to-do` där -d betyder att vi vill köra containern i bakgrunden (daemon) och -p är att vi kopplar containers port 3000 till 3000 på hosten. Därmed kan vi komma åt applikationen i en browser på localhost:3000 på precis samma sätt som när vi körde lokalt.
 
+Om vi vill dela vår container med andra eller köra den på ett annat system så kan vi spara vår image i en tar-fil:
+
+```bash
+    $ docker image save to-do -o to-do-container.tar
+```
+
+Nu har vi en fil som vi kan dela med oss av. Men ett ännu enklare sätt är att ladda upp vår image till ett så kallat registry där det enklaste, beroende på vilka krav man har, är att använda Docker Hub som är integrerat med docker-verktygen.
