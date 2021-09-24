@@ -22,6 +22,11 @@ En container består av en image, dvs paket av mjukvara, med allting som behövs
 
 ---
 
+## Ingress
+Ingress är en del av nätverksresursena i Kubernetes och hanterar nätverkstrafik (HTTP och HTTPS) från utsidan av ett kluster in till de olika services som finns inom klustret. För att Ingress ska fungera krävs att man sätter upp en extern Ingress Controller. Det finns många olika lösningar att välja mellan där Avi Kubernetes Operator är VMwares lösning baserat på [NSX Advanced Load Balancer](https://avinetworks.com/).
+
+---
+
 ## Kubelet
 Kubelet är den primära "agenten" som körs på varje nod i ett Kubernetes-kluster. Det är den som kommunicerar med apiserver för att säkerställa att containers körs som de ska enligt PodSpec.
 
