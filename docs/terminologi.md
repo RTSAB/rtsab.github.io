@@ -39,3 +39,6 @@ En pod består av en eller flera containers som delar storage och nätverksresur
 
 ## Spherelet
 Spherelet är baserat på Kubernetes Kubelet, dvs det man installerar på varje Worker Node i Kubernetes. Genom denna Spherelet kan nu ESXi-hosten ta rollen som Worker Node.
+
+## Supervisor Cluster
+Supervisor Cluster är ett vSphere Cluster som har Workload Management aktiverat för att man ska kunna skapa Kubernetes kluster. Ett Supervisor Cluster kan i sin tur delas upp i namespaces som motsvarar Resource Pools i vSphere Cluster.
