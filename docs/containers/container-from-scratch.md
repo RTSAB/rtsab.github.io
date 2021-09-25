@@ -57,6 +57,9 @@ Nu kan vi byta hostname på vår container utan att vår host ändras!
 
 Vi har 3 systemresurser kvar att lägga in i egna namespaces men nu förstår ni principen och vi hoppar över dem här. Det som sedan återstår för att få en komplett container anno 2006 är cgroups så att vi kan styra hur mycket resurser en enskild container får utnyttja av vår host. I princip är detta "magin" bakom en container-hanterare som LXC eller Docker. Förutom att man lagt till en mängd olika funktioner som underlättar hanteringen och utvecklingen av containers. Även Microsoft har utvecklat stöd för att köra Windows-baserade containers och gränserna mellan Linux och Windows suddas ut mer och mer. Men mer om detta någon annan gång. 
 
+## Frågan om säkerhet
+
+Efter att nu ha sett hur det går till att skapa containers i en Linux-miljö med namespaces och cgroups är det inte svårt att förstå att man kan önska ytterligare säkerhet och isolation för vissa miljöer. Därför finns t ex ett Open Source-projekt som heter [Kata Containers](https://katacontainers.io/) var syfte är att skapa en container runtime som kör varje container i en virtuell maskin. Därmed uppnår man en högre nivå av säkerhet genom isolation på hårdvarunivå. Man kan i princip uppnå samma effekt om man använder VMware vSphere Pod Service.
 
 ## Läs vidare
 
