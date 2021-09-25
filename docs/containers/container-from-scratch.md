@@ -4,7 +4,13 @@ title:  "Bygg en container-runtime från scratch"
 parent: "Containers"
 nav_order: 4
 ---
-# Bygg en container-runtime från scratch
+# Container runtime från scratch
+
+En container runtime är en applikation (och flera komponenter) som tar en container image och bygger ihop och kör själva containern, dvs applikationen. Det finns några olika container runtimes. Förutom Docker Engine finns t ex [containerd](https://containerd.io/) och cri-o. En container runtime gör en massa saker för att göra hanteringen av containern enkel, men i grund och botten så måste ju containern exekveras och det gör vanligtvis av [runC](https://github.com/opencontainers/runc).
+
+## Kicka igång processen
+
+För att få en bättre förståelse för vad en container runtime, eller runc, gör så ska vi här gå igenom hur man i Linux skapar en container.
 
 Eftersom en container-process är helt isolerad på värd-maskinen behöver den ha åtkomst till egna versioner av binärer, skript, konfigurationer och andra beroenden som krävs för att köra applikationen. Alla dessa komponenter, plus annan information som miljövariabler, kommandon osv, samlas i en container image.
 
