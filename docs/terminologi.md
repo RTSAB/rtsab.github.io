@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Terminologi"
+nav_order: 6
 ---
 
 # Terminologi

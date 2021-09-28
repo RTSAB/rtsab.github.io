@@ -1,9 +1,10 @@
 ---
 layout: default
 title: VMware Tanzu
-nav_order: 3
+nav_order: 4
 has_children: true
 permalink: /docs/vmware-tanzu
+has_toc: false
 ---
 
 # VMware Tanzu
