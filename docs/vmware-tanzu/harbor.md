@@ -28,7 +28,7 @@ För att kunna ladda upp en container image med Docker så [rekommenderar VMware
 För att kunna logga in måste vi även ladda ner ett certifikat från Harbor. Antingen loggar man i  Harbor via webgränssnittet eller så laddar man ner det direkt via API:
 
 ```powershell
-> wget https://10.30.150.4/api/systeminfo/getcert -OutFile ca.crt
+> wget https://10.30.150.4/api/systeminfo/getcert -O ca.crt
 ```
 
 Lägg ca.crt filen i en mapp som du döpt till hostnamnet för registry och som ligger under certs.d. Till exempel:
