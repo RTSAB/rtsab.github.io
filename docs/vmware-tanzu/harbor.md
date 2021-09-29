@@ -21,7 +21,7 @@ När du sedan skapar ett [nytt namespace](/docs/vmware-tanzu/namespace-setup/) k
 
 ## vSphere Docker Credential Helper
 
-För att kunna ladda upp en container med Docker så krävs vSphere Docker Credential Helper. Den kan du ladda ner direkt från den Control Plane Node IP Address som är uppsatt för varje kluster. Lägg .exe filen i förslagsvis samma folder som övriga Docker binärer:
+För att kunna ladda upp en container image med Docker så [rekommenderar VMware](https://kb.vmware.com/s/article/78026) att man använder vSphere Docker Credential Helper. Den kan du ladda ner direkt från den Control Plane Node IP Address som är uppsatt för varje kluster. Lägg .exe filen i förslagsvis samma folder som övriga Docker binärer:
 
 ![docker-vsphere](/assets/images/docker-vsphere.png)
 
