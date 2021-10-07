@@ -7,7 +7,7 @@ nav_order: 4
 
 # Lägga till containers i Tanzu
 
-För att kunna använda vårt Kubernetes-kluster behöver vi givetvis applikationer paketerade som containers. När man startar en container som inte finns lokalt sparad så sker det alltid en kontroll mot ett registry. Om du använder Docker så är det Docker Hub. Men av säkerhetsskäl kanske man inte vill använda ett publikt registry för sina egna containers. Därför kommer Tanzu med registry som standard. Detta registry kallas [Harbor](https://goharbor.io/) och det är i grunden ett Open Source projekt just för att hantera container images.
+För att kunna använda vårt Kubernetes-kluster behöver vi givetvis applikationer paketerade som containers. När man startar en container som inte finns lokalt sparad så sker det alltid en kontroll mot ett registry. Om du använder Docker eller Kubernetes så är det Docker Hub. Men av säkerhetsskäl kanske man inte vill använda ett publikt registry för sina egna containers. Därför kommer Tanzu med registry som standard. Detta registry kallas [Harbor](https://goharbor.io/) och det är i grunden ett Open Source projekt just för att hantera container images.
 
 ## Harbor
 
