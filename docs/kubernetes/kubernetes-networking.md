@@ -21,7 +21,9 @@ kind: Deployment                            kind: Service
 ...
 ```
 
-Vi ger sedan ett namn till vår Service. Detta namn registreras med en VIP i klustrets interna DNS-tjänst. Därmed kan man nu komma åt applikationen genom att anropa Service name.                 
+Vi ger sedan ett namn till vår Service. Detta namn registreras med en VIP i klustrets interna DNS-tjänst. Därmed kan man nu komma åt applikationen genom att anropa Service name.
+Om inget annat anges så kommer Service VIP att vara ett ClusterIP som routas endast internt i klustret.
+
 
 Container-to-Container Communication Inside Pods
 
