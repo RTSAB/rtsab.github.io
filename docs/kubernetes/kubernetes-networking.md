@@ -27,15 +27,3 @@ Om inget annat anges så kommer Service VIP att vara ett ClusterIP som routas en
 ## Kube-proxy
 På varje node i ett kluster finns det en tjänst (daemon) som kallas **kube-proxy**. Dess syfte är att hålla koll på API servern och lägga till, ta bort och ändra Services och endpoints. Till exempel så är det kube-proxy som konfigurerar **iptables** regler för att ta emot trafik för sitt ClusterIP och skicka vidare till en av Service endpoints.
 
-
-
-
-
-
-Container-to-Container Communication Inside Pods
-
-## Pod-to-Pod Communication Across Nodes
-The Kubernetes network model aims to reduce complexity, and it treats Pods as VMs on a network, where each VM is equipped with a network interface - thus each Pod receiving a unique IP address. This model is called "IP-per-Pod" and ensures Pod-to-Pod communication, just as VMs are able to communicate with each other on the same network.
-
-## Pod-to-External World Communication
-Kubernetes enables external accessibility through Services, complex encapsulations of network routing rule definitions stored in iptables on cluster nodes and implemented by kube-proxy agents. By exposing services to the external world with the aid of kube-proxy, applications become accessible from outside the cluster over a virtual IP address.
