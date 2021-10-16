@@ -20,6 +20,13 @@ Den andra regeln säger att:
 Tredje regeln är:
 
 - Ingen Network Address Translation (NAT) är tillåten. Alla Pods ska kommunicera med varandra genom varje Pods egen IP-adress.
+
+## Kubernetes nätverkstopologi
+Kubernetes nätverkstopologi består av i huvudsaklig 3 nät. I mitten finns Node Network vilket är det nätverk som alla Nodes är anslutna till. Till detta nätverk kan man även ansluta Pods men det vanliga är att man tilldelar ett dedikerat Pod Network som varje Pod får en egen ip-adress från. Det sista nätverket är Cluster Network och det är från detta nätverk som olika services som t ex HTTP får en extern ip-adress som gör det möjligt att kommunicera med applikationerna.
+
+![Kubernetes nätverkstopologi](/assets/images/kube_net_topo.png)
+
+
 ## Services
 För att en användare eller klient ska komma åt en applikation behöver den ansluta till applikationens Pod. Då Pods inte är statiska utan kommer och går, innebär det att de heller inte kan ha statiska ip-adresser. För att lösa detta använder man virtuella ip (VIP) som man tilldelar applikationerna via en så kallad Service. Med hjälp av Labels och Selectors kan man koppla en Deployment med en Service. I exemplet nedan syns att ```run: to-do-app``` både finns i labels Deployment och selector för Service.
 
