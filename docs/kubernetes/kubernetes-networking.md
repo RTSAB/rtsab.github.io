@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Nätverkskommunikation i Kubernetes"
+title:  "Nätverkskommunikation"
 parent: "Kubernetes"
 nav_order: 2
 ---
@@ -21,30 +21,25 @@ Tredje regeln är:
 
 - Ingen Network Address Translation (NAT) är tillåten. Alla Pods ska kommunicera med varandra genom varje Pods egen IP-adress.
 
-## Kubernetes nätverkstopologi
-Kubernetes nätverkstopologi består av i huvudsaklig 3 nät. I mitten finns Node Network vilket är det nätverk som alla Nodes är anslutna till. Till detta nätverk kan man även ansluta Pods men det vanliga är att man tilldelar ett dedikerat Pod Network som varje Pod får en egen ip-adress från. Det sista nätverket är Cluster Network och det är från detta nätverk som olika services som t ex HTTP får en extern ip-adress som gör det möjligt att kommunicera med applikationerna.
+## Nätverkstopologi
+Kubernetes nätverkstopologi består av i huvudsaklig 3 nät. I mitten finns Node Network vilket är det nätverk som alla Nodes är anslutna till. Till detta nätverk kan man även ansluta Pods men det vanliga är att man tilldelar ett dedikerat Pod Network som varje Pod får en egen ip-adress från, ett så kallat Overlay Network. Det sista nätverket är Cluster Network och det är från detta nätverk som olika services som t ex HTTP får en extern ip-adress som gör det möjligt att kommunicera med applikationerna.
 
 ![Kubernetes nätverkstopologi](/assets/images/kube_net_topo.png)
 
+## Kommunikation
+Nu när vi har en överblick över nätverkstopologin kan vi gå lite djupare och se hur pods kommunicerar i klustret.
 
-## Services
-För att en användare eller klient ska komma åt en applikation behöver den ansluta till applikationens Pod. Då Pods inte är statiska utan kommer och går, innebär det att de heller inte kan ha statiska ip-adresser. För att lösa detta använder man virtuella ip (VIP) som man tilldelar applikationerna via en så kallad Service. Med hjälp av Labels och Selectors kan man koppla en Deployment med en Service. I exemplet nedan syns att ```run: to-do-app``` både finns i labels Deployment och selector för Service.
+### Inom en Pod
+Alla containers i en och samma Pod delar på IP-adress och kommunikation dem emellan sker via localhost och loopback interface.
 
-```
-kind: Deployment                            kind: Service
-...                                         ...
-  template:                                 spec:
-    metadata:                                 type: ClusterIP
-      labels:                                 selector:
-        run: to-do-app                          run: to-do-app
-    spec:                                     ports:
-         containers:                            - port: 80
-...
-```
+### Pod till Pod på samma Node
+För kommunikation mellan Pods på samma Node så sker detta via Pod nätverksinterface som är anslutet till ett Tunnel interface som är konfigurerat på Noden.
 
-Vi ger sedan ett namn till vår Service. Detta namn registreras med en VIP i klustrets interna DNS-tjänst. Därmed kan man nu komma åt applikationen genom att anropa Service name.
-Om inget annat anges så kommer Service VIP att vara ett ClusterIP som routas endast internt i klustret.
+### Pod-trafik mellan olika noder
+I detta fall kommunicerar Pods på med sina ip-adresser antingen direkt via Layer 2/3 eller ett overlay network. När man konfigurerar en Pod i Kubernetes kommer en extra container automatiskt att skapas. Denna speciella container har ett syfte och det är att tillhandahålla ett nätverksinterface till övriga containers i Poden. Då alla containers i en Pod därmed delar interface kommer de att ha samma IP-adress. Därmed kan inte två containers ha samma port öppen precis som att man inte kan köra två processer på samma port på en singel host.
 
-## Kube-proxy
-På varje node i ett kluster finns det en tjänst (daemon) som kallas **kube-proxy**. Dess syfte är att hålla koll på API servern och lägga till, ta bort och ändra Services och endpoints. Till exempel så är det kube-proxy som konfigurerar **iptables** regler för att ta emot trafik för sitt ClusterIP och skicka vidare till en av Service endpoints.
+Om man inte vill tilldela ip-adresser till Pods på samma nät som noderna så kan man i Kubernetes skapa ett **overlay network**. Vad detta gör är att skapa en custom bridge, cbr0, på varje Node som tilldelas ett subnet från en större ip-range skapat för klustret. Routing regler konfigureras för routern så att varje Node vet hur trafiken ska skickas vidare mellan noderna. 
 
+![Overlay Network](/assets/images/kube_net_overlay.png)
+
+För att implementera denna nätverksmodell i verkligheten finns det en mängd olika lösningar för att underlätta konfiguration. I princip vill man kunna skapa ett VXLAN för OVN och använda agenter som kommunicerar med Kubernetes för att konfigurera subnäten och tilldela ip-adresser till Pods. Om man bygger sitt Kubernetes kluster på VMware kan man t ex använda vSphere Distributed Switch för VXLAN.
