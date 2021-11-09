@@ -23,6 +23,11 @@ En container består av en image, dvs paket av mjukvara, med allting som behövs
 
 ---
 
+## Independent and Identically Distributed Data (IID)
+IID är en term inom statistiken (och därmed också Machine Learning) som innebär att den data vi analyserar är oberoende (independent) och identiskt fördelad (distributed). Att den är oberoende betyder att det inte finns någon koppling mellan olika observationer eller datapunkter. Med identiskt distribuerad menar vi att alla datapunkter följer samma sannolikhetsfördelning.
+
+---
+
 ## Ingress
 Ingress är en del av nätverksresursena i Kubernetes och hanterar nätverkstrafik (HTTP och HTTPS) från utsidan av ett kluster in till de olika services som finns inom klustret. För att Ingress ska fungera krävs att man sätter upp en extern Ingress Controller. Det finns många olika lösningar att välja mellan där Avi Kubernetes Operator är VMwares lösning baserat på [NSX Advanced Load Balancer](https://avinetworks.com/).
 
