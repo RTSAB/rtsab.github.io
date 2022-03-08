@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cloud Native Computing Foundation
-nav_order: 5
+nav_order: 6
 ---
 
 ![cncf-logo](/assets/images/logo_cncf.png)
