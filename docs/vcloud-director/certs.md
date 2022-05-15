@@ -7,6 +7,7 @@ nav_order: 1
 ---
 ## Introduction
 {: .no_toc }
+
 Replacing the certificates in vCloud Director is required when the old certificates expire or you want to change the URL for your service. If you only need to replace a certificate that is about to expire you can go straight ahead. 
 However, if you need to change URL it is important that you update the Public Addresses in the provider before you replace the certificate. The reason is your browser might prevent you from accessing the site on the old URL and the service will fail to start.
 So if you want to change the URL as well as certificate, go ahead and update the Public Addresses first before continuing and change the certificates.
