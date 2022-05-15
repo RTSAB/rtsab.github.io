@@ -22,7 +22,7 @@ Tredje regeln är:
 - Ingen Network Address Translation (NAT) är tillåten. Alla Pods ska kommunicera med varandra genom varje Pods egen IP-adress.
 
 ## Nätverkstopologi
-Kubernetes nätverkstopologi består av i huvudsaklig 3 nät. I mitten finns Node Network vilket är det nätverk som alla Nodes är anslutna till. Till detta nätverk kan man även ansluta Pods men det vanliga är att man tilldelar ett dedikerat Pod Network som varje Pod får en egen ip-adress från, ett så kallat Overlay Network. Det sista nätverket är Cluster Network och det är från detta nätverk som olika services som t ex HTTP får en extern ip-adress som gör det möjligt att kommunicera med applikationerna.
+Kubernetes nätverkstopologi består av i huvudsakligen 3 nät. I mitten finns Node Network vilket är det nätverk som alla Nodes är anslutna till. Till detta nätverk kan man även ansluta Pods men det vanliga är att man tilldelar ett dedikerat Pod Network som varje Pod får en egen ip-adress från, ett så kallat Overlay Network. Det sista nätverket är Cluster Network och det är från detta nätverk som olika services som t ex HTTP får en extern ip-adress som gör det möjligt att kommunicera med applikationerna.
 
 ![Kubernetes nätverkstopologi](/assets/images/kube_net_topo.png)
 
