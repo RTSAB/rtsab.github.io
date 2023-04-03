@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "SAML-authentication with Azure AD"
-parent: VMware vCloud Director
+parent: VMware Cloud Director
 author: "Anders Nilsson"
 nav_order: 1
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Change Certificates"
-parent: VMware vCloud Director
+parent: VMware Cloud Director
 author: "Anders Nilsson"
 nav_order: 1
 ---
