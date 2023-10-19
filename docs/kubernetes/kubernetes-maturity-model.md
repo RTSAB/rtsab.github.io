@@ -18,7 +18,7 @@ Kubernetes Maturity Model är vårt sätt att försöka förstå resan mot Cloud
 - **Nivå 5 - Cloud-Native Kultur**: Cloud-native kultur med fokus på automation, kontinuerlig förbättring och delat ansvar.
 ## **2. Arkitektur:**
 - **Nivå 1 - Enkelnod Kubernetes**: Kubernetes är installerad med en enkel nodinstallatör eller körs i Docker.
-- **Nivå 2 - Grundläggande Kubernetes**: Kubernetes är implementerad med grundläggande konfigurationer, och vissa applikationer är containeriserade. Grundläggande podhantering och nätverk är på plats.
+- **Nivå 2 - [Grundläggande Kubernetes](../basic-kubernetes)**: Kubernetes är implementerad med grundläggande konfigurationer, och vissa applikationer är containeriserade. Grundläggande podhantering och nätverk är på plats.
 - **Nivå 3 - Standardiserad Arkitektur**: Kubernetes är implementerad med standardiserade arkitekturmönster, inklusive användning av kontrollers som Deployments och Services.
 - **Nivå 4 - Avancerad Kubernetes**: Avancerade arkitekturmönster som mikrotjänster och tillståndstjänster implementeras effektivt.
 - **Nivå 5 - Cloud-Nativ Excellence**: Arkitekturen omfamnar fullt ut cloud-nativa principer, med användning av avancerade Kubernetes-funktioner och molnspecifika integrationer.
