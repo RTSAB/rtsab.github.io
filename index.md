@@ -30,6 +30,8 @@ Om du vill ha en mer djup förståelse av containers så kan du gå vidare här:
 
 [Introduktion till containers]({% link docs/containers/containers-101.md %})
 
+### Kubernetes Maturity Model
+Även organisationer måste lära sig att använda Kubernetes. För att underlätta förståelse och vilken resa det kan vara har vi tagit fram en [Kubernetes Maturity Model]({% link docs/kubernetes/kubernetes-maturity-model.md %}) som beskriver de olika faser en organisation kan förväntas ta sig igenom.
 
 ## Referenser
 [^1]: Netflix har under flera år bloggat om sin utvecklingsresa. Här är ett bra [blogginlägg](https://netflixtechblog.com/netflix-conductor-a-microservices-orchestrator-2e8d4771bf40)
