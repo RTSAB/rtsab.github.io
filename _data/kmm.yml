@@ -1,0 +1,126 @@
+- title_se: "Kultur och Organisation"
+  title_en: "Culture and Organization"
+  order: 1
+  levels: 
+  - id: 1 
+    name_se: "Medvetenhet"
+    name_en: "Awareness"
+    description_se: "Begränsad medvetenhet om Kubernetes inom organisationen. Individer provar ut containrar och containerorkestrering."
+  - id: 2
+    name_se: "Lärande och Experiment"
+    name_en: "Learning and Experimentation"
+    description_se: "Team lär sig och experimenterar med Kubernetes."
+  - id: 3
+    name_se: "Tvärfunktionella Team"
+    name_en: "Cross-Functional Teams"
+    description_se: "Tvärfunktionella team samarbetar effektivt i Kubernetes-projekt. Roller och ansvarsområden är definierade."
+  - id: 4
+    name_se: "DevOps and SRE Culture"
+    name_en: "DevOps and SRE Culture"
+    description_se: "DevOps och Site Reliability Engineering (SRE) praxis omfamnas."
+  - id: 5
+    name_se: "Cloud-Native Kultur"
+    name_en: "Cloud-Native Culture"
+    description_se: "Cloud-native kultur med fokus på automation, kontinuerlig förbättring och delat ansvar."
+- title_se: "Arkitektur"
+  title_en: "Architecture"
+  order: 2
+  levels: 
+  - id: 1
+    name_se: "Enkelnod Kubernetes"
+    name_en: "Initial"
+    description_se: "Kubernetes är installerad med en enkel nodinstallatör eller körs i Docker."
+  - id: 2
+    name_se: "Basic Kubernetes"
+    name_en: "Basic Kubernetes"
+    description_se: "Kubernetes är implementerad med grundläggande konfigurationer, och vissa applikationer är containeriserade. Grundläggande podhantering och nätverk är på plats."
+  - id: 3
+    name_se: "Standardiserad Arkitektur"
+    name_en: "Standardized Architecture"
+    description_se: "Kubernetes är implementerad med standardiserade arkitekturmönster, inklusive användning av kontrollers som Deployments och Services."
+  - id: 4
+    name_se: "Avancerad Kubernetes"
+    name_en: "Advanced Kubernetes"
+    description_se: "Avancerade arkitekturmönster som mikrotjänster och tillståndstjänster implementeras effektivt."
+  - id: 5
+    name_se: "Cloud-Native Excellence"
+    name_en: "Cloud-Native Excellence"
+    description_se: "Arkitekturen omfamnar fullt ut cloud-nativa principer, med användning av avancerade Kubernetes-funktioner och molnspecifika integrationer."
+- title_se: "Automatisering och CI/CD"
+  title_en: "Automation and CI/CD"
+  order: 3
+  levels:  
+  - id: 1
+    name_se: "Manuell Deployment"
+    name_en: "Manual Deployment"
+    description_se: "Manuell distribution och begränsad automatisering."
+  - id: 2
+    name_se: "Grundläggande Automatisering"
+    name_en: "Basic Automation"
+    description_se: "Grundläggande CI/CD-pipelines för byggning och distribution av containeriserade applikationer."
+  - id: 3
+    name_se: "Full CI/CD-integration och Observabilitet"
+    name_en: "Full CI/CD Integration and Observability"
+    description_se: "Full integration av CI/CD med Kubernetes, inklusive automatiserade tester och utrullningsstrategier. Observabilitet för proaktiv drift."
+  - id: 4
+    name_se: "GitOps och Progressive Delivery"
+    name_en: "GitOps and Progressive Delivery"
+    description_se: "Avancerade GitOps-praxis och progressiv distribution för kontinuerlig förbättring."
+  - id: 5
+    name_se: "Canary och Blue/Green Deployments"
+    name_en: "Canary and Blue/Green Deployments"
+    description_se: "Implementera avancerade distributionsstrategier som canary och blå/grön distribution."
+- title_se: "Säkerhet and Compliance"
+  title_en: "Security and Compliance"
+  order: 4
+  levels:
+  - id: 1
+    name_se: "Basic Security"
+    name_en: "Basic Security"
+    description_se: "Grundläggande säkerhetsåtgärder är på plats, men minimal efterlevnadskontroller."
+  - id: 2
+    name_se: "Nätverkspolicy"
+    name_en: "Network Policies"
+    description_se: "Nätverkspolicyer och RBAC efterlevs för åtkomstkontroll."
+  - id: 3
+    name_se: "Säkerhetsskanning"
+    name_en: "Security Scanning"
+    description_se: "Implementera skanning av containerbilder och säkerhetsbästa praxis."
+  - id: 4
+    name_se: "Compliance as Code"
+    name_en: "Compliance as Code"
+    description_se: "Efterlevnadskontroller automatiseras som kod i CI/CD-pipelines."
+  - id: 5
+    name_se: "Zero Trust and Beyond"
+    name_en: "Zero Trust and Beyond"
+    description_se: "Implementera zero trust-nätverk, avancerade säkerhetspolicyer och kontinuerlig efterlevnadskontroll."
+- title_se: "Skalbarhet och Prestanda"
+  title_en: "Scalability and Performance"
+  order: 5
+  levels: 
+  - id: 1
+    name_se: "Minimal Scaling"
+    name_en: "Minimal Scaling"
+    description_se: "Manuell skalning med begränsad prestandaoptimering."
+  - id: 2
+    name_se: "Basic Scaling"
+    name_en: "Basic Scaling"
+    description_se: "Grundläggande autoskalning och viss prestandaoptimering."
+  - id: 3
+    name_se: "Efficient Scaling"
+    name_en: "Efficient Scaling"
+    description_se: "Effektiv resursanvändning, autoskalning och prestandaövervakning."
+  - id: 4
+    name_se: "Cost-Optimized Scaling"
+    name_en: "Cost-Optimized Scaling"
+    description_se: "Kostnadsoptimering genom resurseffektivitet och skalningsstrategier."
+  - id: 5
+    name_se: "12 Factor Cloud-Native Apps"
+    name_en: "12 Factor Cloud-Native Apps"
+    description_se: "Högpresterande, moln-nativa applikationer med avancerad skalning och optimering."
+
+
+
+
+
+
