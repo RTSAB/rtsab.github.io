@@ -28,8 +28,8 @@
   levels: 
   - id: 1
     name_se: "Enkelnod Kubernetes"
-    name_en: "Initial"
-    description_se: "Kubernetes är installerad med en enkel nodinstallatör eller körs i Docker."
+    name_en: "Single-Node Kubernetes"
+    description_se: "Kubernetes är installerad med en enkelnods distro som Minikube eller körs i Docker."
   - id: 2
     name_se: "Basic Kubernetes"
     name_en: "Basic Kubernetes"
@@ -70,30 +70,30 @@
     name_se: "Canary och Blue/Green Deployments"
     name_en: "Canary and Blue/Green Deployments"
     description_se: "Implementera avancerade distributionsstrategier som canary och blå/grön distribution."
-- title_se: "Säkerhet and Compliance"
+- title_se: "Säkerhet och Compliance"
   title_en: "Security and Compliance"
   order: 4
   levels:
   - id: 1
+    name_se: "Basic Access"
+    name_en: "Basic Access"
+    description_se: "Basic autentisering används med certifikat. I övrigt ingen säkerhet."
+  - id: 2
     name_se: "Basic Security"
     name_en: "Basic Security"
-    description_se: "Grundläggande säkerhetsåtgärder är på plats, men minimal efterlevnadskontroller."
-  - id: 2
-    name_se: "Nätverkspolicy"
-    name_en: "Network Policies"
-    description_se: "Nätverkspolicyer och RBAC efterlevs för åtkomstkontroll."
+    description_se: "Integration med Identity Service samt basic Pod Security."
   - id: 3
-    name_se: "Säkerhetsskanning"
-    name_en: "Security Scanning"
-    description_se: "Implementera skanning av containerbilder och säkerhetsbästa praxis."
+    name_se: "Anpassad säkerhet"
+    name_en: "Granular security"
+    description_se: "Automatisk scanning av container images. Granulär kontroll av kluster och namespaces."
   - id: 4
     name_se: "Compliance as Code"
     name_en: "Compliance as Code"
-    description_se: "Efterlevnadskontroller automatiseras som kod i CI/CD-pipelines."
+    description_se: "Automatiserad efterlevnadskontroll med checkar i alla steg."
   - id: 5
     name_se: "Zero Trust and Beyond"
     name_en: "Zero Trust and Beyond"
-    description_se: "Implementera zero trust-nätverk, avancerade säkerhetspolicyer och kontinuerlig efterlevnadskontroll."
+    description_se: "Implementera zero trust-nätverk, avancerade säkerhetspolicyer och styrning av efterlevnad."
 - title_se: "Skalbarhet och Prestanda"
   title_en: "Scalability and Performance"
   order: 5
